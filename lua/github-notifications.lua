@@ -82,6 +82,7 @@ M.refresh = function()
         if gh_status == 1 then
           local args = if_modified_since and { '-H', '"If-Modified-Since: ' .. if_modified_since .. '"' } or {}
           for _, v in pairs { 'api', config.get 'github_api_endpoint' .. '/notifications' } do
+            vim.notify(v)
             table.insert(args, v)
           end
 
